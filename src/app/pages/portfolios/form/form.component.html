@@ -1,0 +1,32 @@
+<div>
+  <h1>
+      <div *ngIf="edit; then editMode else addMode"></div>
+      <ng-template #addMode>Dodaj Portfel</ng-template>
+      <ng-template #editMode>Edytuj Portfel</ng-template>
+  </h1>
+  <form class="form-container" [formGroup]="form" (ngSubmit)="save()">
+
+    <mat-form-field class="w-100">
+      <input matInput type="text" placeholder="Nazwa Portfela" formControlName="name"/>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <input matInput type="text" placeholder="Klient" formControlName="clientName"/>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <input matInput type="text" placeholder="Cena" formControlName="value"/>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-select placeholder="Waluta" formControlName="currency">
+        <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="mt-1">
+      <button type="submit" class="mx-2" mat-stroked-button color="primary">Zapisz</button>
+      <button type="reset" class="mr-2" mat-stroked-button color="accent" (click)="cancel()">Anuluj</button>
+    </div>
+  </form>
+</div>

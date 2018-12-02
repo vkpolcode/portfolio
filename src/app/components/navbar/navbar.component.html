@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <nav class="w-100" fxShow="true" fxHide.lt-md="true" fxLayout="row nowrap" fxLayoutAlign="flex-start center">
+    <button role="link" routerLink="/" mat-button>
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAAAdCAMAAAD/95CdAAAAAXNSR0IB2cksfwAAAppQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////a+nmkQAAAN50Uk5TAANYZyUPGSoCHw0ks/+H1eo7XQz7ynMmRcBZ4UQ1zFZ5G71wVZR1glIVz/bjKRfEvzdPcchMhTyt2BH+5kttCcK1IPXiXJgWNAsYMSIBSGlqB5v63KbajZ0aBom3HZen8WU48PLX+WRjSutJpKtsxnge0EFh2/eAzt8E0bL84KMFKz3SCPSwgaj95M282Yrv3cm7oOnDufg/j+cUE8eM6LisLbbUQyHLCnYsrl6vxUdoKGt9knvun4RC3uXsb3RXOp6aU3IOMH8QnIPztI53Er4zfCeQHE1AMsGxumJuKudyrAAAA6VJREFUeJzVVflXU0cUvorgQ/uBCogbblRssG5VRHzagKlASNMWY1VQkBpFRGlFJZFoKuLKUkWwtFq7aYsbrUs3F7po3Ze64a7/S2d58b0cn+fkeA7n6Pxwv/vdufPlzZ2ZG6JXe3TqHNZFZ+ERIS/sqhhIZDeJSvfgpNcARAWIEt0jVPGe6KWTmNg46fRGvDGpD/r2648BGkvAwFDVB2GwToYgWjpDEWNMSsTr1BnDNJaE4aGqv4EknViQLFAZ8WZQ0shYJI3CaI2NwdhQ1d/COJ2EY7zAFEwIzkqdGKYgTfqT1MmhitMUvK0TK9IFZqhTn820vSNxGjK1SFa2naw52lJHd3k93nXKQIyFmffw/tP1Qz5AXC7DbEw3+Q7XDIkfIkVgykxAnTXblsf8/DkuYMTcAiIHCmXavCIr0QB8FFg+383u3YLCSUqczWKijoUCnO7ifI6L1IEli3uXAksYWYqyQR9/gmVE5Vgu09ORQLQCKwPLKzxez4xVqMw0bEcfPqwWOBZrOEz1Lw9nUP4pUlkVsJbHHFXMeORHsLNfR1St33fX+g0bN9FmoMxEnJyauldudovaVdAt/GVk1VTkBPJq6yTWIyvoNU1Hmusz7xhgq5k6bWsQsF0VQv5GGW2Cj9nBqjsqUgZ2fC6x+QtmvtQr49vJjga7Ej2er8zUG0q53a1+LQqDb2Q081sB2d+h5vs93LM1y4m9PzDzIxbpAhbUtTgpCrPM1PdhP7NhOMDJwUDbOaS9AtpTBrWVIX6SvO5nZg7jiC7gA99WuNv045tQzWwjyjnJ9S8VwVGx+qtO3VacR05/vSBHxeObgmO6QC5EF/sFv5qoT8Nv7PzUfZLN/L0Thz/gZ2i1i9hxnCA6eYq/Kmcj2oh3gj91Abu8F/a24oJn1XNQamVVK5EsEX8x+zea8A/RmtW8pebXYzfRaT6hnGmbDRb6F2d1gXNaL0nEaQ7nL1w0yhci7VJNXZUkzmT10OZh6tZqVGRTL7+rzHv5pOiiBVdw9VryRsd/UPivH9DXX0elwKrKGgeDTfAa1TfcUBGdF2CR44GiI+Rr8NwkutnMblvRLVGs29txpf0OtdcyP9X476HUatfpLvo7FGrHveDiWFqMLPI+38dF2TW6JcT7AhMR/BVnPODuQeM/X5Zdcx4C7PhMOmWoI8J29vmT+x+5W19cmlUxg12BDhhD57V2sZSkqY87Qpxa0sFP+HCHiLMRv/JJzw4py8s2/gcrysUX4npzHQAAAABJRU5ErkJggg==" alt="logo"/>
+    </button>
+    <button role="link" *ngFor="let link of links" [routerLink]="link.url" mat-button [disabled]="!link.active">{{ link.title }}</button>
+  </nav>
+  <div class="mobile-header w-100" fxShow="true" fxHide.gt-sm="true">
+    <button mat-icon-button class="cursor-pointer" title="Menu" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!opened">menu</mat-icon>
+      <mat-icon *ngIf="opened">close</mat-icon>
+    </button>
+    <button class="mx-auto" role="link" routerLink="/" mat-button>
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAAAdCAMAAAD/95CdAAAAAXNSR0IB2cksfwAAAppQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////a+nmkQAAAN50Uk5TAANYZyUPGSoCHw0ks/+H1eo7XQz7ynMmRcBZ4UQ1zFZ5G71wVZR1glIVz/bjKRfEvzdPcchMhTyt2BH+5kttCcK1IPXiXJgWNAsYMSIBSGlqB5v63KbajZ0aBom3HZen8WU48PLX+WRjSutJpKtsxnge0EFh2/eAzt8E0bL84KMFKz3SCPSwgaj95M282Yrv3cm7oOnDufg/j+cUE8eM6LisLbbUQyHLCnYsrl6vxUdoKGt9knvun4RC3uXsb3RXOp6aU3IOMH8QnIPztI53Er4zfCeQHE1AMsGxumJuKudyrAAAA6VJREFUeJzVVflXU0cUvorgQ/uBCogbblRssG5VRHzagKlASNMWY1VQkBpFRGlFJZFoKuLKUkWwtFq7aYsbrUs3F7po3Ze64a7/S2d58b0cn+fkeA7n6Pxwv/vdufPlzZ2ZG6JXe3TqHNZFZ+ERIS/sqhhIZDeJSvfgpNcARAWIEt0jVPGe6KWTmNg46fRGvDGpD/r2648BGkvAwFDVB2GwToYgWjpDEWNMSsTr1BnDNJaE4aGqv4EknViQLFAZ8WZQ0shYJI3CaI2NwdhQ1d/COJ2EY7zAFEwIzkqdGKYgTfqT1MmhitMUvK0TK9IFZqhTn820vSNxGjK1SFa2naw52lJHd3k93nXKQIyFmffw/tP1Qz5AXC7DbEw3+Q7XDIkfIkVgykxAnTXblsf8/DkuYMTcAiIHCmXavCIr0QB8FFg+383u3YLCSUqczWKijoUCnO7ifI6L1IEli3uXAksYWYqyQR9/gmVE5Vgu09ORQLQCKwPLKzxez4xVqMw0bEcfPqwWOBZrOEz1Lw9nUP4pUlkVsJbHHFXMeORHsLNfR1St33fX+g0bN9FmoMxEnJyauldudovaVdAt/GVk1VTkBPJq6yTWIyvoNU1Hmusz7xhgq5k6bWsQsF0VQv5GGW2Cj9nBqjsqUgZ2fC6x+QtmvtQr49vJjga7Ej2er8zUG0q53a1+LQqDb2Q081sB2d+h5vs93LM1y4m9PzDzIxbpAhbUtTgpCrPM1PdhP7NhOMDJwUDbOaS9AtpTBrWVIX6SvO5nZg7jiC7gA99WuNv045tQzWwjyjnJ9S8VwVGx+qtO3VacR05/vSBHxeObgmO6QC5EF/sFv5qoT8Nv7PzUfZLN/L0Thz/gZ2i1i9hxnCA6eYq/Kmcj2oh3gj91Abu8F/a24oJn1XNQamVVK5EsEX8x+zea8A/RmtW8pebXYzfRaT6hnGmbDRb6F2d1gXNaL0nEaQ7nL1w0yhci7VJNXZUkzmT10OZh6tZqVGRTL7+rzHv5pOiiBVdw9VryRsd/UPivH9DXX0elwKrKGgeDTfAa1TfcUBGdF2CR44GiI+Rr8NwkutnMblvRLVGs29txpf0OtdcyP9X476HUatfpLvo7FGrHveDiWFqMLPI+38dF2TW6JcT7AhMR/BVnPODuQeM/X5Zdcx4C7PhMOmWoI8J29vmT+x+5W19cmlUxg12BDhhD57V2sZSkqY87Qpxa0sFP+HCHiLMRv/JJzw4py8s2/gcrysUX4npzHQAAAABJRU5ErkJggg==" alt="logo"/>
+    </button>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container fxFlexFill class="example-container">
+  <mat-sidenav #sidenav fxLayout="column" [(opened)]="opened">
+    <div fxLayout="column">
+      <button
+        role="link"
+        class="text-left"
+        *ngFor="let link of links"
+        [routerLink]="link.url"
+        mat-button
+        [disabled]="!link.active"
+      >{{ link.title }}</button>
+    </div>
+  </mat-sidenav>
+  <ng-content></ng-content>
+</mat-sidenav-container>

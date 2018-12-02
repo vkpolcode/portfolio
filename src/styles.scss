@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, 
+body, *{
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+h1 {
+  font-size: 2em;
+  margin: .5rem 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.w-100 {
+  width: 100% !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.font-size-12 {
+  font-size: 12px;
+}
+.font-size-18 {
+  font-size: 18px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.mt-1 {
+  margin-top: 1em !important;
+}
+.mt-2 {
+  margin-top: 2em !important;
+}
+.my-1 {
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+.my-2 {
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
+}
+.mx-1 {
+  margin-left: 1em !important;
+  margin-right: 1em !important;
+}
+.mx-2 {
+  margin-left: 2em !important;
+  margin-right: 2em !important;
+}
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.container {
+  min-height: calc(100vh - 64px);
+  @media (max-width: 599px) {
+    min-height: calc(100vh - 56px);
+  }
+
+  .row {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}

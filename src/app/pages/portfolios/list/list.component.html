@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row my-1" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+    <h1>Portfele</h1>
+    <button mat-raised-button (click)="openAdd()">Dodaj Portfel</button>
+  </div>
+  <div class="row">
+    <mat-accordion *ngIf="list.length > 0">
+      <mat-expansion-panel *ngFor="let portfolio of list">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ portfolio.getId }}. {{ portfolio.getName }}</mat-panel-title>
+          <mat-panel-description fxLayoutAlign="flex-end">
+            <button mat-icon-button color="primary" (click)="edit($event, portfolio.getId)">
+              <mat-icon aria-label="Edytuj">edit</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="remove($event, portfolio.getId)">
+              <mat-icon aria-label="Usuń">close</mat-icon>
+            </button>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="description">
+          Klient: {{ portfolio.getClientName }}<br/>
+          Wartość: {{ portfolio.getValue | currency:portfolio.getCurrency }}
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div class="empty-list text-center font-size-18" *ngIf="list.length === 0">
+      Lista portfelów pusta
+    </div>
+  </div>
+</div>
+
+<ng-template #deleteTemplate>
+  <div class="text-center font-size-18">Jesteś pewień że chcesz usunąć wybrany portfel?</div>
+  <div class="text-center mt-1">
+    <button class="mx-2" mat-raised-button color="primary" (click)="confirmRemove()">Usuń</button>
+    <button class="mx-2" mat-raised-button color="warn" (click)="cancel()">Anuluj</button>
+  </div>
+</ng-template>
