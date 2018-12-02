@@ -7,13 +7,11 @@ import {
   MatInputModule,
   MatSelectModule
 } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -27,7 +25,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule
   ],
   exports: [
-    BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
     MatSidenavModule,
